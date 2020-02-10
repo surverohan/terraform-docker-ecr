@@ -5,7 +5,6 @@ Run the follow command, this API open the 8080 Port:
 ```console
 go run *.go
 ```
-
 for building the docker image, run the follow commands:
 
 ```console 
