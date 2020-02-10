@@ -6,9 +6,9 @@ import (
 
 /* Created by Rohan Surve on 02/08/2020. Application Router to route api's call to corrrespoding controller endpoints */
 
-func AppRouter() *mux.Router {
+func NewRouter() *mux.Router {
 
-	router := mux.AppRouter().StrictSlash(true)
+	router := mux.NewRouter().StrictSlash(true)
 	for _, route := range routes {
 
 		router.
