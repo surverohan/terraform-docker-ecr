@@ -9,11 +9,14 @@ go run *.go
 for building the docker image, run the follow commands:
 
 ```console 
-docker build -t libraryapi .
+docker build -t bookapi .
 ```
 
-***Make the Codebuild and ECR:***
+Test End points
 
-add the needed variables to terraform.tfvars and run *terrafom plan* and *terraform apply*
+http://localhost:8080/info
+http://localhost:8080/books
+
+
 
 
