@@ -1,5 +1,7 @@
 package main
 
+/* Created by Rohan Surve on 02/09/2020. Statis data */
+
 var books = Books{
 	book{ID: 0,
 		Name:        "TerraCode CookBook",

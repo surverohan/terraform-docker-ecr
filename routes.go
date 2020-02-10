@@ -4,6 +4,8 @@ import (
 	"net/http"
 )
 
+/* Created by Rohan Surve on 02/08/2020. Appication Router routing configurations */
+
 type Route struct {
 	Name        string
 	Method      string
@@ -18,26 +20,20 @@ var routes Routes
 
 func init() {
 	routes = Routes{
-		Route{
-			"Index",
-			"GET",
-			"/",
-			"Index",
-			Index,
-		},
+		
 		Route{
 			"TodoShow",
 			"GET",
-			"/books/{bookId}",
+			"/book/{bookId}",
 			"Get specific book with ID",
-			GetBook,
+			FetchBook,
 		},
 		Route{
 			"TodoIndex",
 			"GET",
-			"/books",
+			"/fetchallbooks",
 			"Get all Books",
-			GetBooks,
+			FetchAllBooks,
 		},
 
 		Route{
@@ -45,7 +41,15 @@ func init() {
 			"GET",
 			"/info",
 			"Get Paths info",
-			GetPaths,
+			AppInfo,
+		},
+
+		Route{
+			"Index",
+			"GET",
+			"/",
+			"Index",
+			Index,
 		},
 	}
 }

@@ -4,9 +4,11 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func NewRouter() *mux.Router {
+/* Created by Rohan Surve on 02/08/2020. Application Router to route api's call to corrrespoding controller endpoints */
 
-	router := mux.NewRouter().StrictSlash(true)
+func AppRouter() *mux.Router {
+
+	router := mux.AppRouter().StrictSlash(true)
 	for _, route := range routes {
 
 		router.

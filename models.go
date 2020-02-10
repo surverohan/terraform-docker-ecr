@@ -1,5 +1,7 @@
 package main
 
+/* Created by Rohan Surve on 02/08/2020. Application  book and info pojo */
+
 type book struct {
 	ID          int    `json:"id"`
 	Name        string `json:"name"`

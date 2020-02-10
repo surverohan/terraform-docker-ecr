@@ -8,16 +8,26 @@ import (
 	"strconv"
 )
 
-func Index(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Welcome!")
+/* Created by Rohan Surve on 02/09/2020. Application  controller implementation */
+
+func AppInfo(w http.ResponseWriter, r *http.Request) {
+	var infoAPI InfoAPI
+	for _, values := range routes {
+
+		infoAPI = append(infoAPI,
+			Info{Path: values.Pattern, Description: values.Description})
+
+	}
+
+	json.NewEncoder(w).Encode(infoAPI)
 }
 
-func GetBooks(w http.ResponseWriter, r *http.Request) {
+func FetchAllBooks(w http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(w).Encode(books)
 }
 
-func GetBook(w http.ResponseWriter, r *http.Request) {
+func FetchBook(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	bookId, err := strconv.Atoi(vars["bookId"])
 	if err == nil {
@@ -32,14 +42,9 @@ func GetBook(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func GetPaths(w http.ResponseWriter, r *http.Request) {
-	var infoAPI InfoAPI
-	for _, values := range routes {
 
-		infoAPI = append(infoAPI,
-			Info{Path: values.Pattern, Description: values.Description})
-
-	}
-
-	json.NewEncoder(w).Encode(infoAPI)
+func Index(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "Welcome!")
 }
+
+
